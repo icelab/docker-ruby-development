@@ -22,3 +22,6 @@ RUN apt-get install -y libpq-dev libxslt-dev libxml2-dev
 # Install database clients
 RUN apt-get install -y postgresql-client
 
+# Install JS runtime for the Rails asset pipline
+RUN apt-get install -y nodejs npm
+
