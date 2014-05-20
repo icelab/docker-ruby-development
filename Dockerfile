@@ -18,3 +18,7 @@ RUN gem install bundler
 
 # Install development libs for common native gems
 RUN apt-get install -y libpq-dev libxslt-dev libxml2-dev
+
+# Install database clients
+RUN apt-get install -y postgresql-client
+
