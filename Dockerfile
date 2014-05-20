@@ -25,3 +25,5 @@ RUN apt-get install -y postgresql-client
 # Install JS runtime for the Rails asset pipline
 RUN apt-get install -y nodejs npm
 
+# Install PhantomJS for integration testing
+RUN apt-get install -y phantomjs
