@@ -42,8 +42,8 @@ RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
     ./install.sh && \
     rm -rf /tmp/ruby-build
 
-# Ruby 2.1.1
-RUN ruby-build 2.1.1 /usr/local && gem install bundler
+# Ruby 1.9.3-p547
+RUN ruby-build 1.9.3-p547 /usr/local && gem install bundler
 
 # Database clients
 RUN apt-get install -y  --force-yes mysql-client postgresql-client redis-tools sqlite3
