@@ -36,15 +36,6 @@ RUN apt-get install -y  --force-yes \
                     zlib1g \
                     zlib1g-dev
 
-# ruby-build
-RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
-    cd /tmp/ruby-build && \
-    ./install.sh && \
-    rm -rf /tmp/ruby-build
-
-# Ruby 2.0.0-p481
-RUN ruby-build 2.0.0-p481 /usr/local && gem install bundler
-
 # Database clients
 RUN apt-get install -y  --force-yes mysql-client postgresql-client redis-tools sqlite3
 
@@ -63,3 +54,12 @@ RUN cd /tmp && \
     tar xjf /tmp/phantomjs-1.9.7-linux-x86_64.tar.bz2 -C /tmp && \
     mv /tmp/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin && \
     rm -rf /tmp/phantomjs-1.9.7-linux-x86_64
+
+# ruby-build
+RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
+    cd /tmp/ruby-build && \
+    ./install.sh && \
+    rm -rf /tmp/ruby-build
+
+# Ruby 2.1.2
+RUN ruby-build 2.1.2 /usr/local && gem install bundler
