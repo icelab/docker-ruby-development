@@ -61,5 +61,5 @@ RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
     ./install.sh && \
     rm -rf /tmp/ruby-build
 
-# Ruby 2.1.2
-RUN ruby-build 2.1.2 /usr/local && gem install bundler
+# Ruby 2.0
+RUN ruby-build 2.0.0-p481 /usr/local && gem install bundler
